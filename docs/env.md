@@ -25,3 +25,6 @@ $ sudo apt install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev l
 $ sudo apt-get install git build-essential gdb-multiarch qemu-system-misc gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu
 ```
 
+### 硬件组成
+
+使用QEMU软件的**qemu-system-riscv64**来模拟一台RISC-V 64计算机，默认硬件配置如下：
