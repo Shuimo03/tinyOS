@@ -1,15 +1,13 @@
-# GoOS
+# TinyOS
 
-GoOS使用Go语言编写的操作系统内核，使用qemu模拟RISC。
+不打算用Go了，换到Rust，使用qemu模拟RISC，参考XV6代码。
 
 ## 开发环境
 
 + qemu
 + WSL2 Ubuntu20.04
-+ Go 1.17
 
-## 启动
 
-在boot下输入以下命令:
+## 参考链接
 
-qemu-system-riscv32 -nographic -smp 4 -machine virt -bios none -kernel os.elf
++ https://github.com/Ko-oK-OS/xv6-rust
