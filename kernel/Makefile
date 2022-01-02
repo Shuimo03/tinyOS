@@ -1,10 +1,11 @@
-TARGET      := riscv64imac-unknown-none-elf
-MODE        := debug
+# Building
+TARGET  := riscv64imac-unknown-none-elf
+MODE    := debug
 KERNEL_FILE := target/$(TARGET)/$(MODE)/kernel
 BIN_FILE    := target/$(TARGET)/$(MODE)/kernel.bin
 
-OBJDUMP     := rust-objdump --arch-name=riscv64
-OBJCOPY     := rust-objcopy --binary-architecture=riscv64
+OBJDUMP := rust-objdump --arch-name=riscv64
+OBJCOPY := rust-objcopy --binary-architecture=riscv64
 
 .PHONY: doc kernel build clean qemu run
 

@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/cola/tinyOS/kernel'
+make: Leaving directory '/home/cola/tinyOS/kernel'
+ 
+Makefile:17: *** missing separator.  Stop.
+ 

@@ -1,7 +1,10 @@
 #![no_std]
 #![no_main]
-#![feature(global_asm)]
+#![feature(global_asm)] //内嵌整个汇编文件
 #![feature(llvm_asm)]
+
+// 内嵌汇编
+global_asm!(include_str!("entry.asm"));
 use core::panic::PanicInfo;
 
 //当出现panic的时候被调用
