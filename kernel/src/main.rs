@@ -1,40 +1,19 @@
 #![no_std]
-#![no_main]
-#![feature(global_asm)] //内嵌整个汇编文件
-#![feature(llvm_asm)]
+#![no_main] //内嵌整个汇编文件
+#![feature(panic_info_message)]
+
+
+#[macro_use]
+mod console;
+mod panic;
+mod sbi;
+use core::arch::global_asm;
 
 // 内嵌汇编
 global_asm!(include_str!("entry.asm"));
-use core::panic::PanicInfo;
-
-//当出现panic的时候被调用
-#[panic_handler]
-fn panic(_info: &PanicInfo)->!{
-    loop{}
-}
-
-pub fn console_putchar(ch: u8){
-    let _ret: usize;
-    let arg0: usize = ch as usize;
-    let arg1: usize = 0;
-    let arg2: usize = 0;
-    let which: usize = 1;
-
-    unsafe {
-        llvm_asm!("ecall"
-             : "={x10}" (_ret)
-             : "{x10}" (arg0), "{x11}" (arg1), "{x12}" (arg2), "{x17}" (which)
-             : "memory"
-             : "volatile"
-        );
-    }
-    
-}
 
 #[no_mangle]
 pub extern "C" fn rust_main() -> !{
-    console_putchar(b'O');
-    console_putchar(b'K');
-    console_putchar(b'\n');
-    loop{}
+    println!("====TinyOs===");
+    panic!("end of rust_main");
 }

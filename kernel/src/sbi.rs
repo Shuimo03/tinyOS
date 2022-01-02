@@ -9,23 +9,25 @@ const SBI_REMOTE_FENCE_I: usize = 5;
 const SBI_REMOTE_SFENCE_VMA: usize = 6;
 const SBI_REMOTE_SFENCE_ASID: usize = 7;
 const SBI_SHUTDOWN: usize = 8;
-
+use core::arch::asm;
 //SBI调用 知识点:内联汇编
 #[inline(always)]
 fn sbi_call(which: usize,arg0: usize,arg1: usize,arg2: usize) -> usize{
     let mut  ret;
-    unsafe{
-        llvm_asm!("ecall"
-        : "={x10}" (ret)
-        : "{x10}" (arg0), "{x11}" (arg1), "{x12}" (arg2), "{x17}" (which)
-        : "memory"      // 如果汇编可能改变内存，则需要加入 memory 选项
-        : "volatile");  // 防止编译器做激进的优化（如调换指令顺序等破坏 SBI 调用行为的优化）
+    unsafe {
+        asm!(
+            "ecall",
+            inlateout("x10") arg0 => ret,
+            in("x11") arg1,
+            in("x12") arg2,
+            in("x17") which,
+        );
     }
     ret
 }
 
 pub fn set_timer(timer: usize){
-    sbi_call(SBI_SET_TIMER,timer,0,0)
+    sbi_call(SBI_SET_TIMER,timer,0,0);
 }
 
 pub fn console_putchar(c: usize){
@@ -33,7 +35,7 @@ pub fn console_putchar(c: usize){
 }
 /**从控制台读取一个字符,没有读取到就返回-1**/
 pub fn console_getchar() -> usize{
-    sbi_call(SBI_CONSOLE_GETCHAR,0,0,0);
+    sbi_call(SBI_CONSOLE_GETCHAR,0,0,0)
 }
 
 // 关机操作,直接退出QEMU
