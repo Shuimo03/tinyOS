@@ -8,12 +8,16 @@ mod console;
 mod panic;
 mod sbi;
 use core::arch::global_asm;
+mod trap;
 
 // 内嵌汇编
 global_asm!(include_str!("entry.asm"));
 
 #[no_mangle]
 pub extern "C" fn rust_main() -> !{
-    println!("====TinyOs===");
-    panic!("end of rust_main");
+    trap::init();
+   
+    unsafe{
+        
+    }
 }

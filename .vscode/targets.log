@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jan  2 14:34:13 2022
+# Make data base, printed on Thu Jan  6 15:22:06 2022
 
 # Variables
 
@@ -57,7 +57,7 @@ PATH = /home/cola/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/bi
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-522d77e0-6845-4b3a-97ea-adb7126ba65b.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-0306306d-6f4c-4923-8c3c-8ee509dcd95a.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -73,7 +73,7 @@ PWD = /home/cola/tinyOS
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/8_interop
+WSL_INTEROP = /run/WSL/22203_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/server/remoteExtensionHostProcess
 # environment
@@ -159,9 +159,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2048, inode 46604): 10 files, no impossibilities.
+# . (device 2048, inode 46604): 9 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -211,12 +211,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 157 B / avg = 8 B
-# current buf: size = 8162 B / used = 157 B / count = 18 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 17 / storage = 151 B / avg = 8 B
+# current buf: size = 8162 B / used = 151 B / count = 17 / avg = 8 B
 
-# strcache performance: lookups = 21 / hit rate = 14%
+# strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=1/21=5%
-# Finished Make data base on Sun Jan  2 14:34:13 2022
+# Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
+# Finished Make data base on Thu Jan  6 15:22:06 2022
 
  
