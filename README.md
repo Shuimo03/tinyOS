@@ -1,6 +1,6 @@
 # TinyOS
 
-TinyOS参考了XV6和rCore,最初版本是打算使用Go来写，后来转向Rust。代码分层如下:
+TinyOS是一个类Unix内核，TinyOS参考了XV6和rCore,最初版本是打算使用Go来写，后来转向Rust。代码分层如下:
 
 + doc: 这里存放开发过程中的文档。
 + kernel:内核态代码

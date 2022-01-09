@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
- 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jan  6 15:22:06 2022
+# Make data base, printed on Sat Jan  8 16:37:17 2022
 
 # Variables
 
@@ -17,7 +15,7 @@ make: *** No rule to make target 'all'.  Stop.
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = ELECTRON_RUN_AS_NODE/w:
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -26,6 +24,8 @@ VSCODE_AGENT_FOLDER = /home/cola/.vscode-server
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+# environment
+PLATFORMIO_IDE = 2.4.0
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
@@ -37,7 +37,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /mnt/d/Microsoft VS Code/bin/code
+_ = /home/cola/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/node
 # makefile
 MAKEFILE_LIST := 
 # 'override' directive
@@ -53,11 +53,11 @@ VSCODE_CWD = /mnt/d/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/cola/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/bin:/home/cola/gcc_riscv32/bin:/home/cola/go/bin:/home/cola/local/go/bin:/home/cola/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/d/VMware/bin/:/mnt/d/Anaconda:/mnt/d/Anaconda/Library/mingw-w64/bin:/mnt/d/Anaconda/Library/usr/bin:/mnt/d/Anaconda/Library/bin:/mnt/d/Anaconda/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Go/bin:/mnt/d/Git/cmd:/mnt/c/Users/25401/go:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/nodejs/:/mnt/d/Redis/:/mnt/d/tomcat/lib:/mnt/d/tomcat/bin:/mnt/d/tomcat/bin:/mnt/d/tomcat/lib":/mnt/c/Users/25401/.cargo/bin:/mnt/c/Users/25401/scoop/shims:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/25401/go/bin:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/25401/AppData/Roaming/npm:/mnt/d/GoLand 2021.3/bin:/mnt/d/clion/CLion 2021.3.2/bin:/snap/bin:/usr/local/go/bin:/usr/local/go/bin
+NO_PROXY = 127.0.0.1
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-0306306d-6f4c-4923-8c3c-8ee509dcd95a.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-1fa99349-b168-4ffb-9bad-d1a0353564bb.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -73,7 +73,7 @@ PWD = /home/cola/tinyOS
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/22203_interop
+WSL_INTEROP = /run/WSL/11_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/server/remoteExtensionHostProcess
 # environment
@@ -90,12 +90,16 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 MAKELEVEL := 0
+# environment
+PLATFORMIO_PATH = /home/cola/.platformio/penv/bin:/home/cola/.platformio/penv:/home/cola/.platformio/python3/bin:/home/cola/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/bin:/home/cola/gcc_riscv32/bin:/home/cola/go/bin:/home/cola/local/go/bin:/home/cola/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/d/VMware/bin/:/mnt/d/Anaconda:/mnt/d/Anaconda/Library/mingw-w64/bin:/mnt/d/Anaconda/Library/usr/bin:/mnt/d/Anaconda/Library/bin:/mnt/d/Anaconda/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Go/bin:/mnt/d/Git/cmd:/mnt/c/Users/25401/go:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/nodejs/:/mnt/d/Redis/:/mnt/d/tomcat/lib:/mnt/d/tomcat/bin:/mnt/d/tomcat/bin:/mnt/d/tomcat/lib":/mnt/c/Users/25401/.cargo/bin:/mnt/c/Users/25401/scoop/shims:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/25401/go/bin:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/25401/AppData/Roaming/npm:/mnt/d/tomcat/lib:/mnt/d/tomcat/bin:/mnt/d/GoLand 2021.3/bin:/mnt/d/clion/CLion 2021.3.2/bin:/snap/bin:/usr/local/go/bin:/usr/local/go/bin
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+PATH = /home/cola/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/bin:/home/cola/gcc_riscv32/bin:/home/cola/go/bin:/home/cola/local/go/bin:/home/cola/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/d/VMware/bin/:/mnt/d/Anaconda:/mnt/d/Anaconda/Library/mingw-w64/bin:/mnt/d/Anaconda/Library/usr/bin:/mnt/d/Anaconda/Library/bin:/mnt/d/Anaconda/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Go/bin:/mnt/d/Git/cmd:/mnt/c/Users/25401/go:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/nodejs/:/mnt/d/Redis/:/mnt/d/tomcat/lib:/mnt/d/tomcat/bin:/mnt/d/tomcat/bin:/mnt/d/tomcat/lib":/mnt/c/Users/25401/.cargo/bin:/mnt/c/Users/25401/scoop/shims:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/25401/go/bin:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/25401/AppData/Roaming/npm:/mnt/d/tomcat/lib:/mnt/d/tomcat/bin:/mnt/d/GoLand 2021.3/bin:/mnt/d/clion/CLion 2021.3.2/bin:/snap/bin:/usr/local/go/bin:/usr/local/go/bin
+# environment
+SHLVL = 0
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -103,7 +107,7 @@ USER = cola
 # makefile
 .DEFAULT_GOAL := 
 # environment
-NAME = Code
+NAME = DESKTOP-3D0HGO3
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -129,6 +133,8 @@ MAKEFILES :=
 # automatic
 <F = $(notdir $<)
 # environment
+PLATFORMIO_CALLER = vscode
+# environment
 LC_ALL = C
 # environment
 HOSTTYPE = x86_64
@@ -150,8 +156,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=69/1024=7%, Rehash=0, Collisions=4/91=4%
+# Load=74/1024=7%, Rehash=0, Collisions=5/96=5%
 
 # Pattern-specific Variable Values
 
@@ -159,9 +167,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2048, inode 46604): 9 files, no impossibilities.
+# . (device 2048, inode 46604): 10 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -211,12 +219,14 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 151 B / avg = 8 B
-# current buf: size = 8162 B / used = 151 B / count = 17 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 18 / storage = 159 B / avg = 8 B
+# current buf: size = 8162 B / used = 159 B / count = 18 / avg = 8 B
 
-# strcache performance: lookups = 20 / hit rate = 15%
+# strcache performance: lookups = 21 / hit rate = 14%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
-# Finished Make data base on Thu Jan  6 15:22:06 2022
+# Load=18/8192=0%, Rehash=0, Collisions=1/21=5%
+# Finished Make data base on Sat Jan  8 16:37:17 2022
 
+ 
+make: *** No rule to make target 'all'.  Stop.
  

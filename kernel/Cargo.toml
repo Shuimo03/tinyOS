@@ -16,4 +16,5 @@ panic = "abort"  # 禁用panic时栈展开
 panic = "abort"
 
 [dependencies]
-riscv = {git = "https://github.com/rust-embedded/riscv",features = ["inline-asm"]}
+#riscv = {git = "https://github.com/rust-embedded/riscv",features = ["inline-asm"]}
+riscv = { git = "https://github.com/rcore-os/riscv", features = ["inline-asm"] }
