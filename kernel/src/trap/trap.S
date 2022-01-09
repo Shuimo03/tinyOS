@@ -7,7 +7,7 @@
 
 # 宏：将寄存器存到栈上
 .macro SAVE reg, offset
-    sd  \reg, \offset*8(sp)
+    sd  \reg, \offset*8(sp) #sd存储指令
 .endm
 
 .macro SAVE_N n
@@ -27,8 +27,8 @@
     .section .text
     .globl __interrupt
 # 进入中断
-# 保存 Context 并且进入 Rust 中的中断处理函数 interrupt::handler::handle_interrupt()
-__interrupt:
+# 保存 Context 并且进入 Rust 中的中断处理函数 trap::handler::handle_trap()
+__trap:
     # 在栈上开辟 Context 所需的空间
     addi    sp, sp, -34*8
 
@@ -50,14 +50,14 @@ __interrupt:
     SAVE    s1, 32
     SAVE    s2, 33
 
-    # 调用 handle_interrupt，传入参数
+    # 调用 handle_trap，传入参数
     # context: &mut Context
     mv      a0, sp
     # scause: Scause
     csrr    a1, scause
     # stval: usize
     csrr    a2, stval
-    jal  handle_interrupt
+    jal  handle_trap
 
     .globl __restore
 # 离开中断
