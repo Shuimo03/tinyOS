@@ -7,17 +7,34 @@
 mod console;
 mod panic;
 mod sbi;
-use core::{arch::{global_asm,asm}};
+mod sys;
+mod batch;
+mod sync;
+use core::arch::global_asm;
 mod trap;
 
 // 内嵌汇编
 global_asm!(include_str!("entry.asm"));
+global_asm!(include_str!("link_app.S"));
+
+fn class_bss(){
+    extern "C"{
+        fn sbss();
+        fn ebss();
+    }
+    unsafe{
+        core::slice::from_raw_parts_mut(
+            sbss as usize as *mut u8,
+            ebss as usize - sbss as usize,
+        ).fill(0);
+    }
+}
 
 #[no_mangle]
 pub extern "C" fn rust_main(){
+    class_bss();
     println!("=============TinyOS===================");
     trap::init();
-    unsafe{
-       asm!("ebreak");
-    };
+    batch::init();
+    batch::run_next_app();
 }

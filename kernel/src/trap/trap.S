@@ -1,83 +1,68 @@
-# 我们将会用一个宏来用循环保存寄存器。这是必要的设置
 .altmacro
-# 寄存器宽度对应的字节数
-.set    REG_SIZE, 8
-# Context 的大小
-.set    CONTEXT_SIZE, 34
-
 # 宏：将寄存器存到栈上
-.macro SAVE reg, offset
-    sd  \reg, \offset*8(sp) #sd存储指令
+.macro SAVE_GP, n
+    sd x\n, \n*8(sp)
 .endm
-
-.macro SAVE_N n
-    SAVE  x\n, \n
-.endm
-
-
 # 宏：将寄存器从栈中取出
-.macro LOAD reg, offset
-    ld  \reg, \offset*8(sp)
+.macro LOAD_GP, n
+    ld  x\n, \n*8(sp)
 .endm
+    .section .text.trampoline
+    .globl __trap     # 进入中断,保存 Context 并且进入 Rust 中的中断处理函数 trap::handler::handle_trap()
+    .globl __restore  # 从 Context 中恢复所有寄存器，并跳转至 Context 中 sepc 的位置
+    .align 2          # 将__trap的地址4字节对齐
 
-.macro LOAD_N n
-    LOAD  x\n, \n
-.endm
-
-    .section .text
-    .globl __interrupt
-# 进入中断
-# 保存 Context 并且进入 Rust 中的中断处理函数 trap::handler::handle_trap()
+ 
+ # 在栈上开辟 Context 所需的空间
 __trap:
-    # 在栈上开辟 Context 所需的空间
-    addi    sp, sp, -34*8
-
-    # 保存通用寄存器，除了 x0（固定为 0）
-    SAVE    x1, 1
-    # 将原来的 sp（sp 又名 x2）写入 2 位置
-    addi    x1, sp, 34*8
-    SAVE    x1, 2
-    # 保存 x3 至 x31
-    .set    n, 3
-    .rept   29
-        SAVE_N  %n
-        .set    n, n + 1
+    csrw sp, sscratch,sp  #csrw写控制状态寄存器
+    addi    sp, sp, -34*8 #34*8字节栈帧，保存Trap上下文。
+    
+    #保存通用寄存器x0-x31
+    sd x1, 1*8(sp)
+    sd x3, 3*8(sp)
+    #跳过x4和x0====>TODO 补充原因
+    #保存x5-x31
+    .set n,5
+    .rept 27
+        SAVE_GP %n
+        .set n,n+1
     .endr
 
     # 取出 CSR 并保存
-    csrr    s1, sstatus
-    csrr    s2, sepc
-    SAVE    s1, 32
-    SAVE    s2, 33
+    csrr t0, sstatus
+    csrr t1, sepc
+    sd t0, 32*8(sp)
+    sd t1, 33*8(sp)
+    # read user stack from sscratch and save it on the kernel stack
+    csrr t2, sscratch
+    sd t2, 2*8(sp)
+    # set input argument of trap_handler(cx: &mut TrapContext)
+    mv a0, sp
+    call trap_handler
 
-    # 调用 handle_trap，传入参数
-    # context: &mut Context
-    mv      a0, sp
-    # scause: Scause
-    csrr    a1, scause
-    # stval: usize
-    csrr    a2, stval
-    jal  handle_trap
-
-    .globl __restore
-# 离开中断
-# 从 Context 中恢复所有寄存器，并跳转至 Context 中 sepc 的位置
+# 离开中断,从栈上恢复的Trap上下文恢复
 __restore:
-    # 恢复 CSR
-    LOAD    s1, 32
-    LOAD    s2, 33
-    csrw    sstatus, s1
-    csrw    sepc, s2
 
-    # 恢复通用寄存器
-    LOAD    x1, 1
-    # 恢复 x3 至 x31
-    .set    n, 3
-    .rept   29
-        LOAD_N  %n
-        .set    n, n + 1
+    # 从内核栈顶的 Trap 上下文恢复通用寄存器和 CSR,先恢复CSR再恢复通用寄存器。
+    mv sp,  a0
+
+    ld t0,  32*8(sp)
+    ld t1,  33*8(sp)
+    ld t2, 2*8(sp)
+
+    csrw sstatus,t0
+    csrw sepc,t1
+    csrw sscratch,t2
+
+    ld x1,  1*8(sp)
+    ld x3,  3*8(sp)
+    .set n, 5
+    .rept 27
+        LOAD_GP %n
+        .set n, n+1
     .endr
 
-    # 恢复 sp（又名 x2）这里最后恢复是为了上面可以正常使用 LOAD 宏
-    LOAD    x2, 2
-    sret
+    addi sp,sp 34*8
+    csrrw sp,sscratch,sp
+    sret    #回到U特权级继续应用程序控制流
