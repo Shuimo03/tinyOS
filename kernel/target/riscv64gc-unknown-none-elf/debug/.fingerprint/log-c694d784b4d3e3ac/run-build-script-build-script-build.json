@@ -1,0 +1,1 @@
+{"rustc":14960876711220731353,"features":"","target":0,"profile":0,"path":0,"deps":[[2421278278125917078,"build_script_build",false,15758574881077417020]],"local":[{"RerunIfChanged":{"output":"riscv64gc-unknown-none-elf/debug/build/log-c694d784b4d3e3ac/output","paths":["build.rs"]}}],"rustflags":[],"metadata":0,"config":0,"compile_kind":0}

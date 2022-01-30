@@ -2,7 +2,7 @@
 TARGET  := riscv64gc-unknown-none-elf
 MODE    := release
 KERNEL_ELF := target/$(TARGET)/$(MODE)/kernel
-KERNEL_BIN    := target/$(TARGET)/$(MODE)/kernel.bin
+KERNEL_BIN := target/$(TARGET)/$(MODE)/kernel.bin
 DISASM_TMP := target/$(TARGET)/$(MODE)/asm
 
 OBJDUMP := rust-objdump --arch-name=riscv64
@@ -19,7 +19,6 @@ env:
 	rustup component add rust-src
 	rustup component add llvm-tools-preview
 
-# 编译 kernel
 # 生成 kernel 的二进制文件
 $(KERNEL_BIN): kernel
 	@$(OBJCOPY) $(KERNEL_ELF) --strip-all -O binary $@
