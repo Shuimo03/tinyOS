@@ -10,6 +10,8 @@ mod sbi;
 mod sys;
 mod batch;
 mod sync;
+mod config;
+mod mm;
 use core::arch::global_asm;
 mod trap;
 

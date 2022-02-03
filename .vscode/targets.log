@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jan 21 13:58:56 2022
+# Make data base, printed on Wed Feb  2 15:06:49 2022
 
 # Variables
 
@@ -51,11 +51,11 @@ VSCODE_CWD = /mnt/d/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/cola/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/bin:/home/cola/gcc_riscv32/bin:/home/cola/go/bin:/home/cola/local/go/bin:/home/cola/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/d/VMware/bin/:/mnt/d/Anaconda:/mnt/d/Anaconda/Library/mingw-w64/bin:/mnt/d/Anaconda/Library/usr/bin:/mnt/d/Anaconda/Library/bin:/mnt/d/Anaconda/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Go/bin:/mnt/d/Git/cmd:/mnt/c/Users/25401/go:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/nodejs/:/mnt/d/Redis/:/mnt/d/tomcat/lib:/mnt/d/tomcat/bin:/mnt/d/tomcat/bin:/mnt/d/tomcat/lib":/mnt/c/Users/25401/.cargo/bin:/mnt/c/Users/25401/scoop/shims:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/25401/go/bin:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/25401/AppData/Roaming/npm:/mnt/d/GoLand 2021.3/bin:/mnt/d/clion/CLion 2021.3.2/bin:/snap/bin:/usr/local/go/bin:/usr/local/go/bin
+PATH = /home/cola/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/bin:/home/cola/gcc_riscv32/bin:/home/cola/go/bin:/home/cola/local/go/bin:/home/cola/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/d/VMware/bin/:/mnt/d/Anaconda:/mnt/d/Anaconda/Library/mingw-w64/bin:/mnt/d/Anaconda/Library/usr/bin:/mnt/d/Anaconda/Library/bin:/mnt/d/Anaconda/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Go/bin:/mnt/c/Users/25401/go:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/nodejs/:/mnt/d/Redis/:/mnt/d/tomcat/lib:/mnt/d/tomcat/bin:/mnt/d/tomcat/bin:/mnt/d/tomcat/lib":/mnt/d/Git/cmd:/mnt/c/Users/25401/.cargo/bin:/mnt/c/Users/25401/scoop/shims:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/25401/go/bin:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/25401/AppData/Roaming/npm:/mnt/d/GoLand 2021.3/bin:/mnt/d/clion/CLion 2021.3.2/bin:/snap/bin:/usr/local/go/bin:/usr/local/go/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bc07bea7-b15c-425e-a751-e921a17eade7.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4c64f091-22d9-471e-814d-2d307ffe3262.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -71,7 +71,7 @@ PWD = /home/cola/tinyOS
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/25740_interop
+WSL_INTEROP = /run/WSL/8_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/server/remoteExtensionHostProcess
 # environment
@@ -217,7 +217,7 @@ GNUmakefile:
 # strcache performance: lookups = 21 / hit rate = 14%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=1/21=5%
-# Finished Make data base on Fri Jan 21 13:58:56 2022
+# Finished Make data base on Wed Feb  2 15:06:49 2022
 
  
 make: *** No rule to make target 'all'.  Stop.
