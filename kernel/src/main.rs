@@ -14,6 +14,7 @@ mod config;
 mod mm;
 use core::arch::global_asm;
 mod trap;
+extern crate alloc;
 
 // 内嵌汇编
 global_asm!(include_str!("entry.asm"));
