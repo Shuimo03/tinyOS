@@ -1,7 +1,7 @@
 use core::arch::asm;
 
 use lazy_static::*;
-use crate::trap::TrapContext;
+use crate::Interrupt::TrapContext;
 use crate::sync::UPSafeCell;
 
 const USER_STACK_SIZE: usize = 4096 * 2;

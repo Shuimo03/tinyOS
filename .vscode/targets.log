@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+ 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Feb  2 15:06:49 2022
+# Make data base, printed on Fri Feb 11 10:40:48 2022
 
 # Variables
 
@@ -18,8 +20,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 WSLENV = ELECTRON_RUN_AS_NODE/w:
 # default
 .SHELLFLAGS := -c
-# environment
-VSCODE_AGENT_FOLDER = /home/cola/.vscode-server
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -51,11 +51,13 @@ VSCODE_CWD = /mnt/d/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/cola/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/bin:/home/cola/gcc_riscv32/bin:/home/cola/go/bin:/home/cola/local/go/bin:/home/cola/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/d/VMware/bin/:/mnt/d/Anaconda:/mnt/d/Anaconda/Library/mingw-w64/bin:/mnt/d/Anaconda/Library/usr/bin:/mnt/d/Anaconda/Library/bin:/mnt/d/Anaconda/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Go/bin:/mnt/c/Users/25401/go:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/nodejs/:/mnt/d/Redis/:/mnt/d/tomcat/lib:/mnt/d/tomcat/bin:/mnt/d/tomcat/bin:/mnt/d/tomcat/lib":/mnt/d/Git/cmd:/mnt/c/Users/25401/.cargo/bin:/mnt/c/Users/25401/scoop/shims:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/25401/go/bin:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/25401/AppData/Roaming/npm:/mnt/d/GoLand 2021.3/bin:/mnt/d/clion/CLion 2021.3.2/bin:/snap/bin:/usr/local/go/bin:/usr/local/go/bin
+PATH = /home/cola/.vscode-server/bin/d6ee99e4c045a6716e5c653d7da8e9ae6f5a8b03/bin/remote-cli:/home/cola/gcc_riscv32/bin:/home/cola/go/bin:/home/cola/local/go/bin:/home/cola/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/d/VMware/bin/:/mnt/d/Anaconda:/mnt/d/Anaconda/Library/mingw-w64/bin:/mnt/d/Anaconda/Library/usr/bin:/mnt/d/Anaconda/Library/bin:/mnt/d/Anaconda/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Go/bin:/mnt/c/Users/25401/go:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/nodejs/:/mnt/d/Redis/:/mnt/d/tomcat/lib:/mnt/d/tomcat/bin:/mnt/d/tomcat/bin:/mnt/d/tomcat/lib":/mnt/d/Git/cmd:/mnt/c/Users/25401/.cargo/bin:/mnt/c/Users/25401/scoop/shims:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/25401/go/bin:/mnt/c/Users/25401/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/25401/AppData/Roaming/npm:/mnt/d/GoLand 2021.3/bin:/mnt/d/clion/CLion 2021.3.2/bin:/snap/bin:/usr/local/go/bin:/usr/local/go/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4c64f091-22d9-471e-814d-2d307ffe3262.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-f8c54d97-052c-44b2-b39b-f1f4304ca4eb.sock
+# environment
+VSCODE_SERVER_TAR = /mnt/c/Users/25401/AppData/Local/Temp/vscode-remote-wsl/d6ee99e4c045a6716e5c653d7da8e9ae6f5a8b03/vscode-server-stable-linux-x64.tar.gz
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -71,9 +73,9 @@ PWD = /home/cola/tinyOS
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/8_interop
+WSL_INTEROP = /run/WSL/8369_interop
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/server/remoteExtensionHostProcess
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
 # environment
 HOME = /home/cola
 # environment
@@ -105,7 +107,7 @@ NAME = Code
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/25401/.vscode/extensions/ms-vscode-remote.remote-wsl-0.63.13
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/25401/.vscode/extensions/ms-vscode-remote.remote-wsl-0.64.2
 # default
 MAKE_COMMAND := make
 # default
@@ -136,8 +138,6 @@ HOSTTYPE = x86_64
 SUFFIXES := 
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
-# environment
-VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH = /home/cola/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/remote/node_modules
 # default
 .RECIPEPREFIX := 
 # environment
@@ -151,7 +151,7 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 # environment
 MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=70/1024=7%, Rehash=0, Collisions=4/92=4%
+# Load=69/1024=7%, Rehash=0, Collisions=4/91=4%
 
 # Pattern-specific Variable Values
 
@@ -159,9 +159,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2048, inode 46604): 10 files, no impossibilities.
+# . (device 2048, inode 46604): 9 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -211,14 +211,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 156 B / avg = 8 B
-# current buf: size = 8162 B / used = 156 B / count = 18 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 17 / storage = 151 B / avg = 8 B
+# current buf: size = 8162 B / used = 151 B / count = 17 / avg = 8 B
 
-# strcache performance: lookups = 21 / hit rate = 14%
+# strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=1/21=5%
-# Finished Make data base on Wed Feb  2 15:06:49 2022
+# Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
+# Finished Make data base on Fri Feb 11 10:40:48 2022
 
- 
-make: *** No rule to make target 'all'.  Stop.
  

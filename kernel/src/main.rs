@@ -13,7 +13,7 @@ mod sync;
 mod config;
 mod mm;
 use core::arch::global_asm;
-mod trap;
+mod interrupt;
 extern crate alloc;
 
 // 内嵌汇编
@@ -37,7 +37,7 @@ fn class_bss(){
 pub extern "C" fn rust_main(){
     class_bss();
     println!("=============TinyOS===================");
-    trap::init();
+    interrupt::init();
     batch::init();
     batch::run_next_app();
 }
